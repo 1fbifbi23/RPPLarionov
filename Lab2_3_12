@@ -1,0 +1,25 @@
+pip install sys
+pip install random
+import sys
+import random
+
+# Чтение массива A из параметров командной строки
+A = [int(sys.argv[i]) for i in range(1, 11)]
+
+# Вывод наименьшего нечетного элемента массива A
+min_odd = float('inf')
+for num in A:
+    if num % 2 != 0 and num < min_odd:
+        min_odd = num
+
+print("Наименьший нечетный элемент массива A:", min_odd)
+
+# Заполнение массива B случайными элементами
+B = [random.randint(1, 100) for _ in range(10)]
+
+# Обмен элементов массивов A и B
+A, B = B, A
+
+# Вывод массивов A и B
+print("Массив A после обмена:", A)
+print("Массив B после обмена:", B)
